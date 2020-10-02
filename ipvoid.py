@@ -1,28 +1,36 @@
  
+import requests
+from bs4 import BeautifulSoup as bfs
+import time
+import pandas as pd  
+
+df = pd.read_excel('D:/malware project/IPs 2lookout.xlsx',sheet_name='Sheet1')
 
 # Scraping ipvoid
-url = "https://www.ipvoid.com/ip-blacklist-check/"
-session = requests.Session()
-for ip in range(len(df.index)):
-	current_ip = df.loc[ip,'IP'].strip()
 
-	try:
-	    pay_load = {"ip": current_ip}
-	    request = session.post(url, data=pay_load)
-	    soup = bfs(request.content, "html5lib")
-	  	
-	  	# print('configuring out {}'.format(df.loc[ip,'IP']))
+def ipvoid():
+	url = "https://www.ipvoid.com/ip-blacklist-check/"
+	session = requests.Session()
+	for ip in range(len(df.index)):
+		current_ip = df.loc[ip,'IP'].strip()
 
-	    if len(soup.select('span.label.label-danger'))!=0:
-	        result = soup.select('span.label.label-danger')[0].get_text()
-	    elif len(soup.select('span.label.label-warning'))!=0:
-	        result = soup.select('span.label.label-warning')[0].get_text()
-	    else:
-	        result = soup.select('span.label.label-success')[-1].get_text()
-	    
-	    df.loc[ip,'IPVOID'] = result
+		try:
+		    pay_load = {"ip": current_ip}
+		    request = session.post(url, data=pay_load)
+		    soup = bfs(request.content, "html5lib")
+		  	
+		  	# print('configuring out {}'.format(df.loc[ip,'IP']))
 
-	except:
-		df.loc[ip,'IPVOID'] = 'NA'
+		    if len(soup.select('span.label.label-danger'))!=0:
+		        result = soup.select('span.label.label-danger')[0].get_text()
+		    elif len(soup.select('span.label.label-warning'))!=0:
+		        result = soup.select('span.label.label-warning')[0].get_text()
+		    else:
+		        result = soup.select('span.label.label-success')[-1].get_text()
+		    
+		    df.loc[ip,'IPVOID'] = result
 
-	time.sleep(10)
+		except:
+			df.loc[ip,'IPVOID'] = 'NA'
+
+		time.sleep(10)
