@@ -62,7 +62,7 @@ try:
 	df.to_excel(writer)
 	writer.save()	
 
-	with open('D:/malware project/log.txt','a') as file:
+	with open('C:/Users/Public/Public Documents/malicious IPs/log.txt','a') as file:
 	    file.write("--------------------------\n")
 	    file.write("Script execution : SUCCESS")
 	    file.write(f"DATE : {log.date()}\n")
@@ -70,7 +70,7 @@ try:
 	    file.write("--------------------------\n\n")
 
 except:
-	with open('D:/malware project/log.txt','a') as file:
+	with open('C:/Users/Public/Public Documents/malicious IPs/log.txt','a') as file:
 	    file.write("--------------------------\n")
 	    file.write("Script execution : FAILED")
 	    file.write(f"DATE : {log.date()}\n")
