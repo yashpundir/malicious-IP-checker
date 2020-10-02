@@ -6,7 +6,7 @@ import datetime
 
 df = pd.read_excel('D:/malware project/IPs 2lookout.xlsx',sheet_name='Sheet1')
 headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
-
+log = datetime.datetime.today()
 
 def virus_total():
     for ip in range(df.shape[0]):
@@ -63,7 +63,6 @@ try:
 	writer.save()	
 
 	with open('D:/malware project/log.txt','a') as file:
-	    log = datetime.datetime.today()
 	    file.write("--------------------------\n")
 	    file.write("Script execution : SUCCESS")
 	    file.write(f"DATE : {log.date()}\n")
@@ -72,7 +71,6 @@ try:
 
 except:
 	with open('D:/malware project/log.txt','a') as file:
-	    log = datetime.datetime.today()
 	    file.write("--------------------------\n")
 	    file.write("Script execution : FAILED")
 	    file.write(f"DATE : {log.date()}\n")
