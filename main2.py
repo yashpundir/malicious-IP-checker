@@ -9,7 +9,7 @@ headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/5
 log = datetime.datetime.today()
 
 def virus_total():
-    for ip in range(df.shape[0]-15):
+    for ip in range(df.shape[0]):
         current_ip = df.loc[ip,'IP'].strip()
         print(f"configuring ip {df.loc[ip,'IP']} from virus total ({ip}/{df.shape[0]})") #for checking purposes
 
@@ -31,7 +31,7 @@ def virus_total():
 def ipvoid():
 	url = "https://www.ipvoid.com/ip-blacklist-check/"
 	session = requests.Session()
-	for ip in range(df.shape[0]-15):
+	for ip in range(df.shape[0]):
 		current_ip = df.loc[ip,'IP'].strip()
 		print(f"configuring out IP {df.loc[ip,'IP']} from ipvoid ({ip}/{df.shape[0]})") # for checking purposes
 
