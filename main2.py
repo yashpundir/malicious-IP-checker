@@ -89,7 +89,8 @@ try:
 	writer = pd.ExcelWriter('C:/Users/Public/Documents/malicious IPs/IP scan report.xlsx')
 	df.to_excel(writer)
 	writer.save()	
-
+	
+	# Updating log ile
 	with open('C:/Users/Public/Documents/malicious IPs/log.txt','a') as file:
 	    file.write("--------------------------\n")
 	    file.write("Script execution : SUCCESS\n")
@@ -98,7 +99,7 @@ try:
 	    file.write(f"Total IPs checked : {len(df.IP)}\n")
 	    file.write("--------------------------\n\n")
 		      
-	print(f"Script executed Successfully\nTotal IPs checked : {len(df.IP)}")
+	print(f"\n\nSCRIPT EXECUTED SUCCESSFULLY\nTotal IPs checked : {len(df.IP)}")
 	print("\nYou can close this window now or it will close automatically in 3 minutes.")
 	time.sleep(180)
 
