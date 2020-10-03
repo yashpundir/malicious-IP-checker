@@ -37,11 +37,11 @@ def virus_total():
 
             # Adding the final result to the database
             df.loc[ip,'VIRUS TOTAL'] = result
+	    print(result)  #for checking purposes
         
         except:
             df.loc[ip,'VIRUS TOTAL'] = "NA"
-
-        print(result)  #for checking purposes
+	      
         time.sleep(8)
 
 
@@ -75,11 +75,11 @@ def ipvoid():
 
 		    # Adding the final result to the database
 		    df.loc[ip,'IPVOID'] = result
+		    print(result)         #for checking purposes
 
 		except:
 			df.loc[ip,'IPVOID'] = 'NA'
-
-		print(result)                                                        #for checking purposes
+                                                     
 		time.sleep(8)
 
 try:
@@ -97,6 +97,10 @@ try:
 	    file.write(f"TIME : {log.time()}\n")
 	    file.write(f"Total IPs checked : {len(df.IP)}\n")
 	    file.write("--------------------------\n\n")
+		      
+	print(f"Script executed Successfully\nTotal IPs checked : {len(df.IP)}")
+	print("\nYou can close this window now or it will close automatically in 3 minutes.")
+	time.sleep(180)
 
 except:
 	with open('C:/Users/Public/Documents/malicious IPs/log.txt','a') as file:
