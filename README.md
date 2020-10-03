@@ -4,6 +4,7 @@ The script checks whether an IP address is declared blacklisted or safe from 3 m
 1. Cisco Talos
 2. Virus Total
 3. IPVoid
+
 Also maintains a basic log file.
 
 INPUT : 
