@@ -1,0 +1,30 @@
+=============================
+       IP SCANNER
+=============================
+
+-------------------------------------------------------------------------------
+This file is for explaining what the application needs in order to work properly.
+-------------------------------------------------------------------------------
+
+< 1 > The .exe file can be placed anywhere in the PC
+
+< 2 > The IPs to be scanned .xlsx file must be placed in :
+	"C:/Users/Public/Documents/malicious IPs/IPs 2lookout.xlsx"
+
+< 3 > The IPs must be stored on Sheet1
+
+< 4 > The format of IPs2.lookout must be as following :
+	
+	IP |  DOMAIN  |   CISCO TALOS  |  IPVOID  |  VIRUS TOTAL  |
+	------------------------------------------------------------
+   	   |          |                |          |     	  |
+	------------------------------------------------------------
+	   |          |                |          |               |
+	------------------------------------------------------------
+	   |          |                |          |               |
+
+< 5 > There must also be a text file name "log.txt" in the same path as above. 
+      Used for storing the details about when the .exe was run and whether it
+      was successful or not, and other realated information.
+
+< 6 > When the .exe is run, the CMD should open up and start the program.
