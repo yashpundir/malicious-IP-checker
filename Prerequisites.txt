@@ -28,3 +28,5 @@ This file is for explaining what the application needs in order to work properly
       was successful or not, and other realated information.
 
 < 6 > When the .exe is run, the CMD should open up and start the program.
+
+< 7 > The .exe can be made of the main2.py file by using the pyinstaller library.
